@@ -1,40 +1,46 @@
-from sqlalchemy.orm import Session
-from app.models.model_product import Product
+from sqlalchemy.orm import Session, defer, undefer_group
+from app.models.product_model import Product, ProductResponse, ProductRequest
 
 
-def create_product(database: Session, name_product: str, id: int):
-    product = Product(name_product=name_product, id=id)
+def insert(database: Session, product: ProductRequest):
+    product = Product(name=product.name, description=product.description, price=product.price)
     database.add(product)
     database.commit()
-    database.refresh(product)
+    return ProductResponse(id=product.id, name=product.name, description=product.description, price=product.price)
 
 
-def get_all_product(database: Session):
-    products = database.query(Product).all()
+def get_all(database: Session):
+    query = database.query(Product)
+    query = query.options(defer('created_at'), defer('updated_at'))
+    products = query.all()
     return products
 
 
-def get_product_by_id(id: int, database: Session):
-    product = database.query(Product).filter(Product.id == id). first()
+def get_by_id(id: int, database: Session):
+    query = database.query(Product)
+    query = query.options(defer('created_at'), defer('updated_at'))
+    product = query.filter(Product.id == id).first()
     return product
 
 
-def update_product(database: Session, id:int, name_product: str):
-    product = get_product_by_id(database=database, id=id)
-    if not product:
-        return None
-    else:
-        product.name_product = name_product
+def update(database: Session, payload: ProductRequest, id: int):
+    product = get_by_id(database=database, id=id)
+    if product:
+        product.name = payload.name
+        product.description = payload.description
+        product.price = payload.price
         database.commit()
         database.refresh(product)
-        return product
-
-
-def delete_product(database: Session, id: int):
-    product = get_product_by_id(database=database, id=id)
-    if not product:
-        return False
+        return ProductResponse(id=product.id, name=product.name, description=product.description, price=product.price)
     else:
+        return False
+
+
+def delete(database: Session, id: int):
+    product = get_by_id(database=database, id=id)
+    if product:
         database.delete(product)
         database.commit()
         return True
+    else:
+        return False

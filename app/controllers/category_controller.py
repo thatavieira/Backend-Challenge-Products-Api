@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from app.repositories import category_repository
-import app.models.model_category as model_category
+import app.models.category_model as model_category
 from app.database import engine, SessionLocal
 from sqlalchemy.orm import Session
 from fastapi import Depends
