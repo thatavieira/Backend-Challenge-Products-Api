@@ -1,5 +1,5 @@
-from app.api import category_controller as category
-from app.api import product_controller as product
+from src.controllers import category_controller as category
+from src.controllers import product_controller as product
 from fastapi import FastAPI
 from fastapi.openapi.utils import get_openapi
 

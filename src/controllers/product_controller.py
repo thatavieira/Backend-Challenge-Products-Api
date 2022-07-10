@@ -1,4 +1,4 @@
-from app.api import *
+from src.controllers import *
 router, repository = init_controller('product')
 
 

@@ -31,7 +31,7 @@ MANIFEST
 
 # Database Project
 challenge_api_db
-app/challenge_api_db
+src/challenge_api_db
 
 # PyInstaller
 #  Usually these files are written by a python script from a template

@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session, defer
 from sqlalchemy import func
-from app.models.category_model import Category, CategoryResponse, CategoryRequest
+from src.models.category_model import Category, CategoryResponse, CategoryRequest
 from fastapi import HTTPException
 
 

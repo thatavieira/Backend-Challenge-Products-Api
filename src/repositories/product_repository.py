@@ -1,6 +1,6 @@
 from fastapi import HTTPException
 from sqlalchemy.orm import Session, defer
-from app.models.product_model import Product, ProductResponse, ProductRequest
+from src.models.product_model import Product, ProductResponse, ProductRequest
 from sqlalchemy import func
 
 
