@@ -1,5 +1,5 @@
-from app.controllers import category_controller as category
-from app.controllers import product_controller as product
+from app.api import category_controller as category
+from app.api import product_controller as product
 from fastapi import FastAPI
 from fastapi.openapi.utils import get_openapi
 
@@ -32,4 +32,4 @@ async def init_conns():
 
 app.include_router(category.router, prefix="/categories", tags=["Category"])
 app.include_router(product.router, prefix="/products", tags=["Product"])
-#app.openapi = custom_openapi
+app.openapi = custom_openapi
