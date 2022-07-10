@@ -1,8 +1,8 @@
 from uuid import UUID
 from typing import Union
-from app.database import Base
+from src.database import Base
 from sqlalchemy import Column, String
-from app.models.base_model import BaseModel
+from src.models.base_model import BaseModel
 from pydantic import Field, BaseModel as PydanticBaseModel
 
 

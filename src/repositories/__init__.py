@@ -1,6 +1,6 @@
-import app.models.product_model as model_product
-import app.models.category_model as model_category
-from app.database import engine
+import src.models.product_model as model_product
+import src.models.category_model as model_category
+from src.database import engine
 from . import product_repository
 from . import category_repository
 
