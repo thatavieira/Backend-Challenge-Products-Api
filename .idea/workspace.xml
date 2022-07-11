@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="96be057a-4bb6-45bf-922b-df656ba85490" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/db.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/category_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/category_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/product_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/product_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repositories/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/__init__.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="28hub9q4" />
+  </component>
+  <component name="ProjectId" id="2BTu12vfvOHUgqwb4OJ6BoMZS73" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/app/repositories" />
+      <recent name="$PROJECT_DIR$/app/api" />
+      <recent name="$PROJECT_DIR$/app/view_models" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="96be057a-4bb6-45bf-922b-df656ba85490" name="Default Changelist" comment="" />
+      <created>1656942178631</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1656942178631</updated>
+      <workItem from="1656942182980" duration="4526000" />
+      <workItem from="1657109832962" duration="9337000" />
+      <workItem from="1657123122421" duration="2193000" />
+      <workItem from="1657366782575" duration="13420000" />
+      <workItem from="1657380375228" duration="26247000" />
+      <workItem from="1657418284501" duration="172000" />
+      <workItem from="1657418866816" duration="37000" />
+      <workItem from="1657473781307" duration="311000" />
+      <workItem from="1657474125564" duration="17766000" />
+      <workItem from="1657500077093" duration="648000" />
+      <workItem from="1657501808738" duration="764000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>

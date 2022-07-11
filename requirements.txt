@@ -1,6 +1,9 @@
 fastapi==0.75.1
+FastAPI-SQLAlchemy==0.2.1
 uvicorn==0.17.6
 sqlalchemy==1.4.36
 gunicorn==20.1.0
 psycopg2-binary==2.9.3
+fastapi-pagination[all]==0.9.3
 pydantic~=1.9.1
+starlette~=0.17.1

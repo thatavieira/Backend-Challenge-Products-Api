@@ -5,6 +5,8 @@ from src.database import get_db
 from sqlalchemy.orm import Session
 from fastapi import Depends
 from typing import List
+from fastapi_pagination import Page
+
 from fastapi import APIRouter
 from src.repositories import repositories
 

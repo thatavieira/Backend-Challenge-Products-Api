@@ -2,7 +2,7 @@ from src.controllers import *
 router, repository = init_controller('category')
 
 
-@router.get("/", response_model=List[CategoryResponse])
+@router.get("/", response_model=Page[CategoryResponse])
 def get_all(database: Session = Depends(get_db)):
     return repository.get_all(database=database)
 
@@ -12,7 +12,7 @@ def get_by_id(id: int, database: Session = Depends(get_db)):
     return repository.get_by_id(database=database, id=id)
 
 
-@router.post("/", response_model=CategoryResponse)
+@router.post("/", response_model=CategoryResponse, status_code=201)
 def add(name: str, database: Session = Depends(get_db)):
     return repository.add(database=database, name=name)
 
