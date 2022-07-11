@@ -1,7 +1,10 @@
+from fastapi.middleware.cors import CORSMiddleware
+
 from src.controllers import category_controller as category
 from src.controllers import product_controller as product
 from fastapi import FastAPI
 from fastapi.openapi.utils import get_openapi
+from fastapi_pagination import add_pagination
 
 app = FastAPI()
 
@@ -29,7 +32,20 @@ async def init_conns():
     All clients will be initialized once only as Singletons
     """
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+    allow_credentials=True,
+)
 
+app.openapi = custom_openapi
 app.include_router(category.router, prefix="/categories", tags=["Category"])
 app.include_router(product.router, prefix="/products", tags=["Product"])
-app.openapi = custom_openapi
+add_pagination(app)
+
+
+@app.get("/", include_in_schema=False)
+def main():
+    return {"product_api": "ok"}

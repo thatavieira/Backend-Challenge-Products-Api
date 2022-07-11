@@ -1,8 +1,11 @@
+import importlib
 import src.models.product_model as model_product
 import src.models.category_model as model_category
-from src.database import engine
-from . import product_repository
-from . import category_repository
+from src.db import engine
+from fastapi_pagination.ext.sqlalchemy import paginate
+from sqlalchemy import func
+from fastapi import HTTPException
+from sqlalchemy.orm import Session, defer
 
 
 model_product.Base.metadata.create_all(bind=engine)
@@ -10,7 +13,7 @@ model_category.Base.metadata.create_all(bind=engine)
 
 repositories = \
     {
-        "product": product_repository,
-        "category": category_repository,
+        "product":  importlib.import_module("src.repositories.product_repository"),
+        "category": importlib.import_module("src.repositories.category_repository"),
     }
 
