@@ -1,7 +1,7 @@
 import importlib
 import src.models.product_model as model_product
 import src.models.category_model as model_category
-from src.database import engine
+from src.db import engine
 from fastapi_pagination.ext.sqlalchemy import paginate
 from sqlalchemy import func
 from fastapi import HTTPException

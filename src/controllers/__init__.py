@@ -1,7 +1,7 @@
 from src.models.product_model import ProductRequest, ProductResponse
 from src.models.category_model import Category, CategoryRequest, CategoryResponse
 
-from src.database import get_db
+from src.db import get_db
 from sqlalchemy.orm import Session
 from fastapi import Depends
 from typing import List

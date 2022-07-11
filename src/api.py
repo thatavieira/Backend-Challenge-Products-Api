@@ -1,5 +1,4 @@
 from fastapi.middleware.cors import CORSMiddleware
-from starlette.responses import RedirectResponse
 
 from src.controllers import category_controller as category
 from src.controllers import product_controller as product
@@ -49,4 +48,4 @@ add_pagination(app)
 
 @app.get("/", include_in_schema=False)
 def main():
-    return RedirectResponse(url="/docs/")
+    return {"product_api": "ok"}

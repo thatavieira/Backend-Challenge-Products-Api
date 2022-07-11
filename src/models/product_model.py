@@ -1,6 +1,6 @@
 from uuid import UUID
 from typing import Union, Optional
-from src.database import Base
+from src.db import Base
 from sqlalchemy import Column, String, Float, ForeignKey, Integer
 from src.models.base_model import BaseModel
 from pydantic import Field, BaseModel as PydanticBaseModel
