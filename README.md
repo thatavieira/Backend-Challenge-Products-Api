@@ -100,7 +100,7 @@ To build and run the application, you need to install the dependencies below:
 2.Creating and Initializing Virtual Enviroment
 
     python3 -m venv .venv 
-    source .venv/bin/activate
+    source venv/bin/activate
 
 3.Installing Packages
 
