@@ -8,6 +8,9 @@
 <a href="https://pypi.org/"><img alt="pydantic" src="https://img.shields.io/badge/pydantic-1.9.1-inactive"></p>
 
 
+<img alt="logo" src="https://raw.githubusercontent.com/thatavieira/backend_challenge_products_api/developer/img/fast_api.png"/>
+
+
 # About The Project
 
 Project created for realize Challenge Backend Products Api, project which allows manipulate and relate products and categories.
