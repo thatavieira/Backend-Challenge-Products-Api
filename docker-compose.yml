@@ -19,3 +19,50 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=challenge_api_db
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - './docker-volumes/db:/var/lib/postgresql/data'
+
+
+
+version: '3.4'
+services:
+  server:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        - http_proxy
+        - https_proxy
+        - no_proxy
+    image: prologyc/server:latest
+    ports:
+      - '8433:8433'
+    stdin_open: true
+    tty: true
+  db:
+    image: 'postgres:9.6.2'
+    container_name: postgres
+    environment:
+      POSTGRES_HOST: 
+      POSTGRES_PASSWORD: 
+      POSTGRES_DB: 
+      POSTGRES_USER: 
+      PGDATA: /tmp
+    ports:
+      - '5432:5432'
+    hostname: postgres-log
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - './docker-volumes/postgres-desenvolvimento:/var/lib/postgresql/data'
+
+
+      ${REDIS_PASSWORD}

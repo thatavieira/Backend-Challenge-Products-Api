@@ -1,14 +1,16 @@
+<h3 align="center">Product API</h3>
+<p align="center">
+<a href="https://github.com/thatavieira/backend_challenge_products_api"><img alt="products_api" src="https://img.shields.io/badge/products__api-1.2.1-orange" /></a>
+<a href="https://pypi.org/"><img alt="fastApi" src="https://img.shields.io/badge/fastApi-0.75.1-green"/></a>
+<a href="https://pypi.org/"><img alt="uvicorn" src="https://img.shields.io/badge/uvicorn-0.17.6-red"/></a>
+<a href="https://pypi.org/"><img alt="SQLAchemy" src="https://img.shields.io/badge/SQLAchemy-1.4.36-9cf"/></a>
+<a href="https://pypi.org/"><img alt="psycopg2-binary" src="https://img.shields.io/badge/psycopg2--binary-2.9.3-yellow"/></a>
+<a href="https://pypi.org/"><img alt="fastApi-pagination" src="https://img.shields.io/badge/fastApi--pagination-0.9.3-blue"/></a>
+<a href="https://pypi.org/"><img alt="pydantic" src="https://img.shields.io/badge/pydantic-1.9.1-inactive"/></a></p>
 
-<p><a href="https://github.com/thatavieira/backend_challenge_products_api"><img alt="products_api" src="https://img.shields.io/badge/products__api-1.2.1-orange"></a>
-<a href="https://pypi.org/"><img alt="fastApi" src="https://img.shields.io/badge/fastApi-0.75.1-green">
-<a href="https://pypi.org/"><img alt="uvicorn" src="https://img.shields.io/badge/uvicorn-0.17.6-red">
-<a href="https://pypi.org/"><img alt="SQLAchemy" src="https://img.shields.io/badge/SQLAchemy-1.4.36-9cf">
-<a href="https://pypi.org/"><img alt="psycopg2-binary" src="https://img.shields.io/badge/psycopg2--binary-2.9.3-yellow">
-<a href="https://pypi.org/"><img alt="fastApi-pagination" src="https://img.shields.io/badge/fastApi--pagination-0.9.3-blue">
-<a href="https://pypi.org/"><img alt="pydantic" src="https://img.shields.io/badge/pydantic-1.9.1-inactive"></p>
-
-
+<p align="center">
 <img alt="logo" src="https://raw.githubusercontent.com/thatavieira/backend_challenge_products_api/developer/img/fast_api.png"/>
+</p>
 
 
 # About The Project
@@ -110,7 +112,7 @@ To build and run the application, you need to install the dependencies below:
 
     python3 main.py  
 
-Obs.: You must have PostgreSQL installed, if not you can use Docker as below.
+Ps.: You must have PostgreSQL installed, if not you can use Docker as below.
 
 * Docker - Optional
 
@@ -120,40 +122,27 @@ Obs.: You must have PostgreSQL installed, if not you can use Docker as below.
 
 #### docker-compose.yml
 ```
-version: '3.4'
+version: "3.7"
+
 services:
-  server:
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-      args:
-        - http_proxy
-        - https_proxy
-        - no_proxy
-    image: prologyc/server:latest
+  app:
+    build: .
+    container_name: app
+    command:  uvicorn src.api:app --host 0.0.0.0
     ports:
-      - '8433:8433'
-    stdin_open: true
-    tty: true
-  postgres-db:
-    image: 'postgres:9.6.2'
-    container_name: postgres
+      - 8000:8000
+    depends_on:
+      - "db"
+
+  db:
+    image: postgres:12.1-alpine
+    container_name: db
+    ports:
+      - 5432:5432
     environment:
-      POSTGRES_HOST: 
-      POSTGRES_PASSWORD: 
-      POSTGRES_DB: 
-      POSTGRES_USER: 
-      PGDATA: /tmp
-    ports:
-      - '5432:5432'
-    hostname: postgres-log
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-    volumes:
-      - './docker-volumes/postgres-desenvolvimento:/var/lib/postgresql/data'
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
 ```
 
 # Development
