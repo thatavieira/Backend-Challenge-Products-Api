@@ -19,9 +19,9 @@ Project created for realize Challenge Backend Products Api, project which allows
 
 * Mandatory requirements
     
-    1.User should be able of create,read, update and delete products.
+    1.User should be able of create, read, update and delete products.
     
-    2.User should be able of create,read,update and delete categories.
+    2.User should be able of create, read, update and delete categories.
 
     3.A product must be related to a category.
 
@@ -94,29 +94,36 @@ To build and run the application, you need to install the dependencies below:
 
 * Steps for configuration
 
-1.Clone application
+1. Clone application
     
+    ```
     git clone https://git@github.com/thatavieira/backend_challenge_products_api.git
+    ```
     
-    
-2.Creating and Initializing Virtual Enviroment
+2. Creating and Initializing Virtual Enviroment
 
-    python3 -m venv .venv 
-    source venv/bin/activate
+    ```
+    python3 -m venv .venv && source venv/bin/activate
+    ```
+3. Installing Packages
 
-3.Installing Packages
+    ```
+    python3 -m pip install -r requirements.txt
+    ```
 
-    python3 -m pip install -r requirements.txt 
+4. Initializing API
 
-4.Initializing API
-
+    ```
     python3 main.py  
-
+    ```
 Ps.: You must have PostgreSQL installed, if not you can use Docker as below.
 
 * Docker - Optional
 
-1.If you want to run the application in docker, configure the file docker-compose and after the command `docker-compose up --build -d`
+1. If you want to run the application in docker, configure the file docker-compose and after the command 
+```
+docker-compose up --build -d
+```
 
 2.Configure the environment variables for containers in `docker-compose.yml` file:
 
