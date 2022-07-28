@@ -9,7 +9,7 @@ from sqlalchemy.orm import relationship
 
 
 class Product(BaseModel, Base):
-    __tablename__ = 'products'
+    __tablename__ = "products"
 
     def __init__(self, product):
         self.name = product.name
@@ -28,7 +28,7 @@ class Product(BaseModel, Base):
     description = Column(String(50), nullable=False)
     price = Column(Float)
     category_id = Column(Integer, ForeignKey("categories.id"))
-    category = relationship(Category, lazy='joined')
+    category = relationship(Category, lazy="joined")
 
 
 class ProductRequest(PydanticBaseModel):
@@ -44,4 +44,4 @@ class ProductResponse(ProductRequest):
 
     class Config:
         orm_mode = True
-        fields = {'category_id': {'exclude': True}}
+        fields = {"category_id": {"exclude": True}}

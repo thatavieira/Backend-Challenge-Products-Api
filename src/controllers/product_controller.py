@@ -1,6 +1,11 @@
-from platform import java_ver
-from src.controllers import *
-router, repository = init_controller('product')
+from fastapi import Depends
+from fastapi_pagination import Page
+from sqlalchemy.orm import Session
+from src.controllers import init_controller
+from src.db import get_db
+from src.models.product_model import ProductRequest, ProductResponse
+
+router, repository = init_controller("product")
 
 
 @router.get("/", response_model=Page[ProductResponse])
