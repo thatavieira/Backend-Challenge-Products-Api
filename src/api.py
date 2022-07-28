@@ -1,10 +1,10 @@
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.openapi.utils import get_openapi
+from fastapi_pagination import add_pagination
 
 from src.controllers import category_controller as category
 from src.controllers import product_controller as product
-from fastapi import FastAPI
-from fastapi.openapi.utils import get_openapi
-from fastapi_pagination import add_pagination
 
 app = FastAPI()
 
@@ -31,6 +31,7 @@ async def init_conns():
     """Init external connections & middlewares
     All clients will be initialized once only as Singletons
     """
+
 
 app.add_middleware(
     CORSMiddleware,

@@ -7,7 +7,7 @@ from pydantic import Field, BaseModel as PydanticBaseModel
 
 
 class Category(BaseModel, Base):
-    __tablename__ = 'categories'
+    __tablename__ = "categories"
 
     name = Column(String(50), nullable=False, index=True, unique=True)
 
@@ -21,4 +21,3 @@ class CategoryResponse(CategoryRequest):
 
     class Config:
         orm_mode = True
-

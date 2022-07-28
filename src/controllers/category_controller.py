@@ -1,5 +1,11 @@
-from src.controllers import *
-router, repository = init_controller('category')
+from fastapi import Depends
+from fastapi_pagination import Page
+from sqlalchemy.orm import Session
+from src.controllers import init_controller
+from src.db import get_db
+from src.models.category_model import CategoryRequest, CategoryResponse
+
+router, repository = init_controller("category")
 
 
 @router.get("/", response_model=Page[CategoryResponse])

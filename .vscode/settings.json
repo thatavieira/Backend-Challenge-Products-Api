@@ -1,0 +1,7 @@
+{
+    "python.linting.enabled": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Path": "/home/thata/.local/bin/flake8",
+    "python.formatting.BlackPath": "/home/thata/.local/bin/black",
+    "python.formatting.Provider": "black"
+}
